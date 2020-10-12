@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import './home/attractions.dart';
+import './home/food.dart';
+import './home/history.dart';
+import './home/hotel.dart';
+import './home/shopping.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
@@ -17,7 +22,13 @@ class HomeStateWidget extends StatefulWidget {
 class HomeState extends State<HomeStateWidget>
     with SingleTickerProviderStateMixin {
   TabController _tabController; //需要定义一个Controller
-  List tabs = ["新闻", "历史", "图片"];
+  List tabs = [
+    {"value": "history", "label": "历史文化", "widget": HistoryWidget()},
+    {"value": "attractions", "label": "著名景区", "widget": AttractionsWidget()},
+    {"value": "food", "label": "美食达人", "widget": FoodWidget()},
+    {"value": "hotel", "label": "酒店民宿", "widget": HotelWidget()},
+    {"value": "shopping", "label": "购物中心", "widget": ShoppingWidget()}
+  ];
 
   @override
   void initState() {
@@ -36,7 +47,9 @@ class HomeState extends State<HomeStateWidget>
               TabBar(
                   //生成Tab菜单
                   controller: _tabController,
-                  tabs: tabs.map((e) => Tab(text: e)).toList())
+                  labelPadding: EdgeInsets.only(left: 30, right: 30),
+                  isScrollable: true,
+                  tabs: tabs.map((e) => Tab(text: e['label'])).toList())
             ])),
       ),
       body: TabBarView(
@@ -45,7 +58,7 @@ class HomeState extends State<HomeStateWidget>
           //创建3个Tab页
           return Container(
             alignment: Alignment.center,
-            child: Text(e, textScaleFactor: 5),
+            child: e["widget"],
           );
         }).toList(),
       ),

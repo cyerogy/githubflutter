@@ -14,3 +14,17 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## 功能清单
+| 功能 | 状态 | 
+| -  | -: | 
+| 自定义首页标签 | 未开始 |
+| 注册 | 未开始 |
+| 登录 | 未开始 |
+| 找回密码 | 未开始 |
+| 介绍 | 未开始 |
+| 景点 | 未开始 |
+| 美食 | 未开始 |
+| 购物 | 未开始 |
+| 特产 | 未开始 |
+| 民宿 | 未开始 |

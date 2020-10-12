@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../page/home.dart';
-import '../page/trend.dart';
+import '../page/search.dart';
 import '../page/collect.dart';
 import '../page/my.dart';
 
@@ -10,7 +10,7 @@ class IndexBottomNavigator extends StatefulWidget {
 }
 
 class IndexBottomNavigatorState extends State<IndexBottomNavigator> {
-  final _bottomNavigationColor = Colors.blue;
+  final _bottomNavigationColor = Colors.green;
   int _currentIndex = 0;
   List<Widget> pages = List<Widget>();
 
@@ -18,7 +18,7 @@ class IndexBottomNavigatorState extends State<IndexBottomNavigator> {
   void initState() {
     super.initState();
     pages.add(HomeWidget());
-    pages.add(TrendWidget());
+    pages.add(SearchWidget());
     pages.add(CollectWidget());
     pages.add(MyWidget());
   }
@@ -40,11 +40,11 @@ class IndexBottomNavigatorState extends State<IndexBottomNavigator> {
               )),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.trending_up,
+                Icons.search,
                 color: _bottomNavigationColor,
               ),
               title: Text(
-                '趋势',
+                '搜索',
                 style: TextStyle(color: _bottomNavigationColor),
               )),
           BottomNavigationBarItem(
