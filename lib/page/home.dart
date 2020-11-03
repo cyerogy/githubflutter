@@ -23,11 +23,9 @@ class HomeState extends State<HomeStateWidget>
     with SingleTickerProviderStateMixin {
   TabController _tabController; //需要定义一个Controller
   List tabs = [
-    {"value": "history", "label": "历史文化", "widget": HistoryWidget()},
-    {"value": "attractions", "label": "著名景区", "widget": AttractionsWidget()},
-    {"value": "food", "label": "美食达人", "widget": FoodWidget()},
-    {"value": "hotel", "label": "酒店民宿", "widget": HotelWidget()},
-    {"value": "shopping", "label": "购物中心", "widget": ShoppingWidget()}
+    {"value": "attractions", "label": "景点", "widget": AttractionsWidget()},
+    {"value": "food", "label": "美食", "widget": FoodWidget()},
+    {"value": "hotel", "label": "民宿", "widget": HotelWidget()}
   ];
 
   @override
