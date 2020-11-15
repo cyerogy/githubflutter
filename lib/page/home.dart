@@ -1,9 +1,15 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2020-11-07 09:39:01
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-11-15 11:23:52
+ */
 import 'package:flutter/material.dart';
 import './home/attractions.dart';
 import './home/food.dart';
-import './home/history.dart';
 import './home/hotel.dart';
-import './home/shopping.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
