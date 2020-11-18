@@ -107,15 +107,23 @@ class AttractionsState extends State<AttractionsStateWidget> {
                             child: Text(
                               list[index]["name"],
                               style: TextStyle(
-                                  color: Colors.black, fontSize: 20.0),
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
-                        Text(
-                          list[index]["star"].toString(),
-                          style: TextStyle(color: Colors.black, fontSize: 20.0),
-                        ),
-                        Icon(Icons.star_border, size: 24)
+                        Offstage(
+                          offstage: list[index]["star"] == 0,
+                          child: Row(children: [
+                            Text(
+                              list[index]["star"].toString(),
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 16.0),
+                            ),
+                            Icon(Icons.star_border, size: 24)
+                          ]),
+                        )
                       ]),
                     ),
                     Container(
@@ -123,14 +131,19 @@ class AttractionsState extends State<AttractionsStateWidget> {
                       padding: EdgeInsets.only(left: 5, right: 10.0),
                       child: Text(list[index]["description"],
                           style:
-                              TextStyle(color: Colors.black, fontSize: 15.0)),
+                              TextStyle(color: Colors.black, fontSize: 16.0)),
                     ),
                     Container(
                       height: 30.0,
+                      padding: EdgeInsets.only(left: 5, right: 10.0),
                       child: Row(children: [
+                        Expanded(
+                            child: Text("暂无评分",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15.0))),
                         Text(
                           list[index]["love"].toString(),
-                          style: TextStyle(color: Colors.black, fontSize: 20.0),
+                          style: TextStyle(color: Colors.black, fontSize: 16.0),
                         ),
                         Icon(
                           Icons.favorite_border,

@@ -9,7 +9,6 @@
 import 'package:flutter/material.dart';
 import './home/attractions.dart';
 import './home/food.dart';
-import './home/hotel.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
@@ -30,8 +29,7 @@ class HomeState extends State<HomeStateWidget>
   TabController _tabController; //需要定义一个Controller
   List tabs = [
     {"value": "attractions", "label": "景点", "widget": AttractionsWidget()},
-    {"value": "food", "label": "美食", "widget": FoodWidget()},
-    {"value": "hotel", "label": "民宿", "widget": HotelWidget()}
+    {"value": "food", "label": "美食", "widget": FoodWidget()}
   ];
 
   @override
@@ -51,9 +49,16 @@ class HomeState extends State<HomeStateWidget>
               TabBar(
                   //生成Tab菜单
                   controller: _tabController,
-                  labelPadding: EdgeInsets.only(left: 30, right: 30),
+                  labelPadding: EdgeInsets.only(left: 50, right: 50),
                   isScrollable: true,
-                  tabs: tabs.map((e) => Tab(text: e['label'])).toList())
+                  tabs: tabs
+                      .map((e) => Tab(
+                            child: Text(
+                              e['label'],
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ))
+                      .toList())
             ])),
       ),
       body: TabBarView(
