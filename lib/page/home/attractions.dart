@@ -56,7 +56,7 @@ class AttractionsState extends State<AttractionsStateWidget> {
   }
 
   Future _getMoreData() async {
-    var result = await selfapi.getCityAttractions(130900, currentPage, pageRow);
+    var result = await selfapi.getCityAttractions(110100, currentPage, pageRow);
     setState(() {
       isrefresh = false;
       showMore = false;
