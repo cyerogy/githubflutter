@@ -67,7 +67,7 @@ class FoodState extends State<FoodStateWidget> {
   Widget _buildRow(list, index) {
     if (isrefresh) {
       return Container(
-        height: 50.0,
+        height: 80.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,7 @@ class FoodState extends State<FoodStateWidget> {
             children: <Widget>[
               Container(
                 alignment: Alignment.topLeft,
-                padding: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
                 child: Image(
                     image: NetworkImage(
                         CommonApi.BASEURL + list[index]["imageUrl"])),
@@ -113,10 +113,16 @@ class FoodState extends State<FoodStateWidget> {
                     ),
                     Container(
                       height: 80.0,
+                      alignment: Alignment.topLeft,
                       padding: EdgeInsets.only(left: 5, right: 10.0),
                       child: Text(list[index]["description"],
-                          style:
-                              TextStyle(color: Colors.black, fontSize: 16.0)),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16.0,
+                            fontFamily: "Songti",
+                          )),
                     ),
                     Container(
                       height: 30.0,
@@ -125,7 +131,9 @@ class FoodState extends State<FoodStateWidget> {
                         Expanded(
                             child: Text("暂无评分",
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 15.0))),
+                                    fontFamily: 'Kaiti',
+                                    color: Colors.black,
+                                    fontSize: 15.0))),
                         Text(
                           list[index]["love"].toString(),
                           style: TextStyle(color: Colors.black, fontSize: 16.0),
